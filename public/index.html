@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Film and earlier composition work accompanying David Phillips’ Galaxias application.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#101c1a">
+  <title>GALAXIAS — Film &amp; sound · David Phillips</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101c1a;
+      --surface: #162320;
+      --ink: #f0f1e6;
+      --muted: #b1beb4;
+      --line: #35463f;
+      --accent: #d4d4a4;
+      --max: 1080px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-underline-offset: .25em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible, button:focus-visible, video:focus-visible, audio:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+    button { font: inherit; }
+    [hidden] { display: none !important; }
+    .wrap { width: min(var(--max), calc(100% - 72px)); margin-inline: auto; }
+    .skip { position: absolute; z-index: 20; left: 18px; top: -100px; padding: 10px 16px; background: var(--ink); color: var(--bg); }
+    .skip:focus { top: 12px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; min-height: 90px; border-bottom: 1px solid var(--line); gap: 24px; }
+    .studio { font-size: 17px; letter-spacing: -.04em; }
+    .studio span { color: var(--muted); font-size: 13px; letter-spacing: 0; margin-left: 8px; }
+    nav { display: flex; gap: 30px; font-size: 13px; }
+    nav a { text-decoration: none; padding: 12px 0; }
+    .intro { padding: 62px 0 47px; }
+    .eyebrow, .section-id { margin: 0; text-transform: uppercase; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--accent); }
+    h1 { font-size: clamp(52px, 11vw, 126px); line-height: 1.05; font-weight: 400; letter-spacing: -.055em; margin: 18px 0 18px; }
+    .tagline { font-size: clamp(20px, 2.5vw, 28px); line-height: 1.4; letter-spacing: -.02em; margin: 0 0 14px; max-width: 700px; }
+    .byline { margin: 0; font-size: 14px; color: var(--muted); }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
+    .section-heading h2 { margin: 0; font-weight: 400; font-size: 18px; letter-spacing: -.015em; }
+    .section-heading .section-id { margin-right: 14px; }
+    .section-title { display: flex; align-items: baseline; gap: 0; }
+    .status { font-size: 12px; color: var(--muted); }
+    .film-screen { position: relative; aspect-ratio: 16 / 9; background: #08110f; overflow: hidden; border: 1px solid var(--line); }
+    .film-cover, .film-cover img, #film-player, #film-player video, #film-player iframe { width: 100%; height: 100%; }
+    .film-cover { position: absolute; inset: 0; }
+    .film-cover img { display: block; object-fit: cover; }
+    .film-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 78%, #07100d99 100%); }
+    .film-copy { position: absolute; z-index: 1; left: 34px; right: 34px; bottom: 29px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+    .film-copy h3 { display: none; font-size: clamp(24px, 4vw, 40px); font-weight: 400; letter-spacing: -.025em; line-height: 1.2; margin: 0 0 6px; }
+    .film-copy p { margin: 0; color: #e0e5d9; font-size: 13px; }
+    .film-play { flex: 0 0 auto; border: 1px solid #b4c2ad; background: var(--ink); color: #14221c; padding: 12px 20px; cursor: pointer; text-decoration: none; }
+    .film-play:hover { background: var(--accent); }
+    #film-player { position: absolute; inset: 0; }
+    #film-player video { display: block; object-fit: contain; background: #000; }
+    #film-player iframe { display: block; border: 0; }
+    .caption { font-size: 12px; color: var(--muted); margin: 11px 0 0; max-width: 760px; }
+    .film-error { margin: 12px 0 0; padding: 12px 16px; border-left: 2px solid var(--accent); font-size: 14px; }
+    .film-error a { margin-left: 8px; }
+    .sound { margin-top: 67px; }
+    .sound .section-heading { padding-top: 25px; border-top: 1px solid var(--line); }
+    .sound h2 { font-size: 28px; }
+    .sound-intro { color: var(--muted); font-size: 15px; max-width: 650px; margin: 12px 0 30px; }
+    .track { display: grid; grid-template-columns: 28px minmax(0, 1fr) 176px; align-items: center; column-gap: 18px; row-gap: 15px; padding: 25px 0; border-top: 1px solid var(--line); }
+    .track:last-of-type { border-bottom: 1px solid var(--line); }
+    .track-number { align-self: start; color: var(--muted); font-size: 11px; padding-top: 8px; font-variant-numeric: tabular-nums; }
+    .track h3 { font-weight: 400; font-size: 24px; letter-spacing: -.02em; line-height: 1.2; margin: 0 0 5px; }
+    .track-detail { font-size: 12px; color: var(--muted); margin: 0; }
+    .track-controls { min-width: 0; width: 176px; justify-self: end; }
+    audio { width: 100%; display: block; height: 42px; }
+    #film-direct { margin: 8px 0 0; }
+    .file-link { display: block; width: fit-content; font-size: 11px; margin: 7px 4px 0 auto; color: var(--muted); }
+    .track-error { font-size: 12px; color: var(--accent); margin: 7px 0 0; }
+    .credits { margin: 55px 0 27px; padding-top: 24px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1.4fr; gap: 70px; font-size: 12px; color: var(--muted); }
+    .credits p { margin: 0 0 9px; }
+    .credit-name { color: var(--ink); }
+    .footer { padding: 19px 0 30px; display: flex; justify-content: space-between; gap: 18px; font-size: 11px; color: var(--muted); }
+    .footer a { text-decoration: none; }
+    noscript p { padding: 12px 0; color: var(--muted); font-size: 13px; }
+
+    .track.is-active { background: var(--surface); }
+    .excerpt-play, .excerpt-fallback { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #788b79; background: transparent; color: var(--ink); font-size: 13px; cursor: pointer; text-decoration: none; }
+    .excerpt-play:hover, .excerpt-fallback:hover { background: #293d32; color: var(--ink); }
+    .excerpt-play[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .play-icon { width: 15px; text-align: center; font-size: 11px; }
+    .clip-time { display: block; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; text-align: center; margin-top: 6px; }
+    .clip-progress { width: 100%; height: 3px; display: block; border: 0; background: var(--line); margin-top: 7px; accent-color: var(--accent); }
+    .clip-progress::-webkit-progress-bar { background: var(--line); }
+    .clip-progress::-webkit-progress-value { background: var(--accent); }
+    .clip-progress::-moz-progress-bar { background: var(--accent); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 700px) {
+      .wrap { width: calc(100% - 40px); }
+      .topbar { min-height: 75px; }
+      .studio span { display: none; }
+      nav { gap: 22px; }
+      .intro { padding: 43px 0 35px; }
+      h1 { margin: 17px 0; }
+      .eyebrow { font-size: 10px; letter-spacing: .12em; }
+      .film-copy { left: 20px; right: 20px; bottom: 6px; gap: 12px; }
+      .film-copy p { font-size: 11px; }
+      .film-play { padding: 8px 12px; font-size: 12px; }
+      .sound { margin-top: 45px; }
+      .sound h2 { font-size: 24px; }
+      .track { grid-template-columns: 23px minmax(0, 1fr); column-gap: 12px; padding: 24px 0; }
+      .track-controls { grid-column: 2; justify-self: start; width: min(100%, 176px); }
+      .credits { grid-template-columns: 1fr; gap: 20px; margin-top: 40px; }
+      .footer { flex-wrap: wrap; }
+    }
+    @media (max-width: 380px) {
+      .wrap { width: calc(100% - 28px); }
+      h1 { font-size: 48px; }
+      .film-copy { left: 14px; right: 14px; bottom: 6px; }
+      .film-copy h3 { display: none; font-size: 22px; }
+      .film-copy p { font-size: 10px; }
+      .film-play { padding: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to media</a>
+  <header class="wrap topbar">
+    <div class="studio">ecoLogic arts <span>/ David Phillips</span></div>
+    <nav aria-label="Media sections"><a href="#film">Film</a><a href="#sound">Sound</a><a href="#documents">Documents</a></nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Originate Games · Supporting creative materials</p>
+      <h1>GALAXIAS</h1>
+      <p class="tagline">The extraordinary lives of the ordinary aquatic world.</p>
+      <p class="byline">Game concept by David Phillips.</p>
+    </div>
+
+    <section id="film" aria-labelledby="film-heading">
+      <div class="section-heading">
+        <div class="section-title"><span class="section-id">M1</span><h2 id="film-heading">Prototype film</h2></div>
+        <span class="status">Work in progress</span>
+      </div>
+      <div class="film-screen">
+        <div class="film-cover" id="film-cover">
+          <img src="media/galaxias-development-reel.png" width="1672" height="941" alt="GALAXIAS concept and experimental development reel. Original music by David Phillips. Golden underwater artwork.">
+          <div class="film-copy">
+            <div><h3 id="film-title">Prototype film</h3><p id="film-state">Video to follow</p></div>
+            <button type="button" class="film-play" id="film-play" hidden>Play film <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+        <div id="film-player" hidden></div>
+      </div>
+      <p class="caption" id="film-caption">Concept and experimental development reel. Opens in Google Drive.</p>
+      <a id="film-direct" class="file-link" href="#" target="_blank" rel="noopener" hidden>Open film in a new tab</a>
+      <p class="film-error" id="film-error" role="status" hidden></p>
+      <noscript><p>Enable JavaScript to view the film player.</p></noscript>
+    </section>
+
+    <section id="sound" class="sound" aria-labelledby="sound-heading">
+      <div class="section-heading">
+        <div class="section-title"><span class="section-id">M4</span><h2 id="sound-heading">Composition &amp; sound</h2></div>
+        <span class="status">Earlier work · David Phillips</span>
+      </div>
+      <p class="sound-intro">Selected excerpts from earlier compositions and live experiments.</p>
+      <article id="rain" class="track" data-excerpt data-src="media/audio/rain.mp3" data-duration="94.000000" data-title="Rain" aria-labelledby="rain-title">
+        <span class="track-number" aria-hidden="true">01</span>
+        <div><h3 id="rain-title">Rain</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Rain" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/rain.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 1:34</span>
+          <progress class="clip-progress" value="0" max="94.000000" aria-label="Rain playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/rain.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="frog" class="track" data-excerpt data-src="media/audio/frog.mp3" data-duration="62.000000" data-title="Frog" aria-labelledby="frog-title">
+        <span class="track-number" aria-hidden="true">02</span>
+        <div><h3 id="frog-title">Frog</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Frog" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/frog.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 1:02</span>
+          <progress class="clip-progress" value="0" max="62.000000" aria-label="Frog playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/frog.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="flood" class="track" data-excerpt data-src="media/audio/flood.mp3" data-duration="97.000000" data-title="Flood" aria-labelledby="flood-title">
+        <span class="track-number" aria-hidden="true">03</span>
+        <div><h3 id="flood-title">Flood</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Flood" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/flood.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 1:37</span>
+          <progress class="clip-progress" value="0" max="97.000000" aria-label="Flood playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/flood.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="piano-drone" class="track" data-excerpt data-src="media/audio/piano-drone.mp3" data-duration="59.000000" data-title="Fluvial" aria-labelledby="piano-drone-title">
+        <span class="track-number" aria-hidden="true">04</span>
+        <div><h3 id="piano-drone-title">Fluvial</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Fluvial" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/piano-drone.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 0:59</span>
+          <progress class="clip-progress" value="0" max="59.000000" aria-label="Fluvial playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/piano-drone.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="sleep" class="track" data-excerpt data-src="media/audio/sleep.mp3" data-duration="79.000000" data-title="Storm" aria-labelledby="sleep-title">
+        <span class="track-number" aria-hidden="true">05</span>
+        <div><h3 id="sleep-title">Storm</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Storm" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/sleep.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 1:19</span>
+          <progress class="clip-progress" value="0" max="79.000000" aria-label="Storm playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/sleep.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="live-dub-tech-jam" class="track" data-excerpt data-src="media/audio/live-dub-tech-jam.mp3" data-duration="241.000000" data-title="Between the Rocks" aria-labelledby="live-dub-tech-jam-title">
+        <span class="track-number" aria-hidden="true">06</span>
+        <div><h3 id="live-dub-tech-jam-title">Between the Rocks</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Between the Rocks" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/live-dub-tech-jam.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 4:01</span>
+          <progress class="clip-progress" value="0" max="241.000000" aria-label="Between the Rocks playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/live-dub-tech-jam.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="hadal" class="track" data-excerpt data-src="media/audio/hadal.mp3" data-duration="125.052250" data-title="Murk" aria-labelledby="hadal-title">
+        <span class="track-number" aria-hidden="true">07</span>
+        <div><h3 id="hadal-title">Murk</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Murk" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/hadal.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 2:05</span>
+          <progress class="clip-progress" value="0" max="125.052250" aria-label="Murk playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/hadal.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="chalk-1" class="track" data-excerpt data-src="media/audio/chalk-1.mp3" data-duration="146.000000" data-title="Tiny Legs" aria-labelledby="chalk-1-title">
+        <span class="track-number" aria-hidden="true">08</span>
+        <div><h3 id="chalk-1-title">Tiny Legs</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Tiny Legs" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/chalk-1.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 2:26</span>
+          <progress class="clip-progress" value="0" max="146.000000" aria-label="Tiny Legs playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/chalk-1.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <article id="10c" class="track" data-excerpt data-src="media/audio/10c.mp3" data-duration="85.000000" data-title="Mechano-receptors" aria-labelledby="10c-title">
+        <span class="track-number" aria-hidden="true">09</span>
+        <div><h3 id="10c-title">Mechano-receptors</h3></div>
+        <div class="track-controls">
+          <button type="button" class="excerpt-play" aria-label="Play Mechano-receptors" aria-pressed="false" hidden><span class="play-icon" aria-hidden="true">▶</span><span class="play-label">Play excerpt</span></button>
+          <a class="excerpt-fallback" href="media/audio/10c.mp3">Play excerpt</a>
+          <span class="clip-time">0:00 / 1:25</span>
+          <progress class="clip-progress" value="0" max="85.000000" aria-label="Mechano-receptors playback progress" hidden></progress>
+          <p class="track-error" role="status" hidden>Playback unavailable. <a href="media/audio/10c.mp3">Open MP3</a></p>
+        </div>
+      </article>
+      <audio id="excerpt-audio" preload="none" hidden></audio>
+      <p id="audio-status" class="sr-only" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="documents" class="sound" aria-labelledby="documents-heading">
+      <div class="section-heading"><div class="section-title"><h2 id="documents-heading">Application documents</h2></div></div>
+      <p class="sound-intro">Download the project documentation and curriculum vitae.</p>
+      <p><a class="film-play" href="documents/Galaxias_Originate_Documentation.pdf" download>Download project documentation (PDF)</a></p>
+      <p style="margin-top:30px"><a class="film-play" href="documents/DPhillips_Originate_CV.pdf" download>Download David Phillips’ CV (PDF)</a></p>
+    </section>
+
+    <div class="credits">
+      <div><p class="credit-name">David Phillips / ecoLogic arts</p><p>Supporting creative materials for the Galaxias application.</p></div>
+      <p>Galaxias is being developed on Bunurong Country. I acknowledge its Traditional Owners, the Bunurong/Boon Wurrung people of the Kulin Nation, and honour Elders past and present.</p>
+    </div>
+  </main>
+  <footer class="wrap footer"><span>GALAXIAS · 2026</span><a href="#top">Back to top ↑</a></footer>
+
+  <!-- FILM SETTINGS: edit only the JSON below to add the final film.
+       Local MP4: "kind": "file", "src": "media/galaxias-film.mp4"
+       YouTube:   "kind": "youtube", "src": "https://www.youtube.com/watch?v=VIDEO_ID"
+       Vimeo:     "kind": "vimeo", "src": "https://vimeo.com/VIDEO_ID"
+       Drive:     "kind": "drive", "src": "https://drive.google.com/file/d/FILE_ID/view"
+       An unlisted Vimeo URL can include its /HASH after the numeric ID.
+       Leave src empty to show the photograph while no film is configured.
+  -->
+  <script id="film-settings" type="application/json">
+{
+  "kind": "drive",
+  "src": "https://drive.google.com/file/d/1zmlOArNh6Pk94SlhyOlWjv2-SBfE1wg4/view?usp=drivesdk",
+  "title": "Application video",
+  "caption": "Concept and experimental development reel. Opens in Google Drive.",
+  "captions": ""
+}
+  </script>
+  <script>
+    (() => {
+      'use strict';
+      const cover = document.getElementById('film-cover');
+      const holder = document.getElementById('film-player');
+      const play = document.getElementById('film-play');
+      const filmError = document.getElementById('film-error');
+      const audioPlayers = [...document.querySelectorAll('audio')];
+      let video = null;
+      let iframe = null;
+      let film = null;
+
+      // Keep audio and the film from playing over one another.
+      function stopFilm() {
+        if (video) video.pause();
+        if (iframe) {
+          // Removing a remote player stops it without relying on provider SDKs.
+          iframe.remove();
+          iframe = null;
+          holder.hidden = true;
+          cover.hidden = false;
+          document.getElementById('film-state').textContent = 'Play film from the beginning';
+        }
+      }
+      function pauseAudio(except) {
+        audioPlayers.forEach(player => { if (player !== except) player.pause(); });
+      }
+      document.addEventListener('excerpt-play', stopFilm);
+
+      function safeURL(value) {
+        const url = new URL(value, document.baseURI);
+        if (!['http:', 'https:', 'file:'].includes(url.protocol)) throw new Error('Unsupported media URL');
+        if (location.protocol === 'https:' && url.protocol !== 'https:') throw new Error('Use HTTPS for hosted media');
+        return url;
+      }
+      function resolveFilm(settings) {
+        const raw = String(settings.src || '').trim();
+        if (!raw) return null;
+        const url = safeURL(raw);
+        if (settings.kind === 'file') return { kind: 'file', src: url.href };
+        if (settings.kind === 'youtube') {
+          let id;
+          if (url.hostname === 'youtu.be') id = url.pathname.slice(1);
+          else if (['youtube.com', 'www.youtube.com', 'm.youtube.com', 'www.youtube-nocookie.com'].includes(url.hostname)) {
+            id = url.searchParams.get('v') || url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)/)?.[1];
+          }
+          if (!id || !/^[\w-]{11}$/.test(id)) throw new Error('Invalid YouTube link');
+          return { kind: 'embed', src: 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0' };
+        }
+        if (settings.kind === 'drive') {
+          if (url.hostname !== 'drive.google.com') throw new Error('Invalid Google Drive link');
+          // Keep the exact viewing URL returned by the connected source.
+          return { kind: 'external', src: url.href };
+        }
+        if (settings.kind === 'vimeo') {
+          const match = url.pathname.match(/^\/(?:video\/)?(\d+)(?:\/([a-zA-Z0-9]+))?\/?$/);
+          if (!['vimeo.com', 'www.vimeo.com', 'player.vimeo.com'].includes(url.hostname) || !match) throw new Error('Invalid Vimeo link');
+          const hash = match[2] || url.searchParams.get('h');
+          const params = new URLSearchParams({ autoplay: '1', dnt: '1' });
+          if (hash) params.set('h', hash);
+          return { kind: 'embed', src: 'https://player.vimeo.com/video/' + match[1] + '?' + params.toString() };
+        }
+        throw new Error('Unsupported film kind');
+      }
+      function showFilmError(message, link) {
+        filmError.textContent = message;
+        filmError.hidden = false;
+        if (link) {
+          const a = document.createElement('a');
+          a.href = link;
+          a.textContent = 'Open film directly';
+          a.target = '_blank';
+          a.rel = 'noopener';
+          filmError.append(a);
+        }
+      }
+      function revealPlayer() {
+        cover.hidden = true;
+        holder.hidden = false;
+      }
+      try {
+        const settings = JSON.parse(document.getElementById('film-settings').textContent);
+        film = resolveFilm(settings);
+        if (!film) return;
+        const title = settings.title || 'Prototype film';
+        document.getElementById('film-title').textContent = title;
+        document.getElementById('film-heading').textContent = title;
+        document.getElementById('film-state').textContent = 'Watch the prototype film';
+        document.getElementById('film-caption').textContent = settings.caption || 'Work in progress.';
+        play.hidden = false;
+        const direct = document.getElementById('film-direct');
+        direct.href = safeURL(settings.src).href;
+        direct.hidden = false;
+        if (film.kind === 'external') {
+          const watch = document.createElement('a');
+          watch.className = 'film-play';
+          watch.href = film.src;
+          watch.target = '_blank';
+          watch.rel = 'noopener';
+          watch.textContent = 'Watch on Drive ↗';
+          watch.addEventListener('click', () => pauseAudio());
+          play.replaceWith(watch);
+          document.getElementById('film-state').textContent = 'Opens in Google Drive';
+          direct.hidden = true;
+          return;
+        }
+        if (film.kind === 'file') {
+          video = document.createElement('video');
+          video.controls = true;
+          video.playsInline = true;
+          video.preload = 'none';
+          video.poster = 'media/galaxias-development-reel.png';
+          video.setAttribute('aria-label', title);
+          video.src = film.src;
+          if (settings.captions) {
+            const track = document.createElement('track');
+            track.kind = 'captions';
+            track.label = 'English';
+            track.srclang = 'en';
+            track.src = safeURL(settings.captions).href;
+            track.default = true;
+            video.append(track);
+          }
+          video.addEventListener('play', () => pauseAudio());
+          video.addEventListener('error', () => showFilmError('The film could not load.', film.src));
+          holder.append(video);
+        }
+        play.addEventListener('click', () => {
+          pauseAudio();
+          filmError.hidden = true;
+          revealPlayer();
+          if (video) {
+            video.focus();
+            const request = video.play();
+            if (request && request.catch) request.catch(() => {
+              if (!video.error) showFilmError('Use the video controls to start playback.');
+            });
+          } else {
+            iframe = document.createElement('iframe');
+            iframe.title = title;
+            iframe.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+            iframe.allowFullscreen = true;
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            iframe.src = film.src;
+            holder.append(iframe);
+            iframe.focus();
+          }
+        });
+      } catch (error) {
+        showFilmError('The film link is not available yet.');
+      }
+    })();
+  </script>
+  <script src="audio-player.js"></script>
+</body>
+</html>

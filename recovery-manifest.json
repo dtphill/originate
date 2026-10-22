@@ -1,0 +1,90 @@
+{
+  "recovered_at_utc": "2026-10-22T22:44:45.099880+00:00",
+  "source_deployment": "34c466c2-515b-4a9d-9cfa-cca9b067a7f0",
+  "files": [
+    {
+      "path": "audio-player.js",
+      "url": "https://galaxias-media.dtpgames.com/audio-player.js",
+      "bytes": 4483,
+      "sha256": "c88f5b6ae65544aaa25d31c4905c1b0e5752d326c4cd71a53b22c2eba4165b10"
+    },
+    {
+      "path": "documents/DPhillips_Originate_CV.pdf",
+      "url": "https://galaxias-media.dtpgames.com/documents/DPhillips_Originate_CV.pdf",
+      "bytes": 97672,
+      "sha256": "494690f37cc782ee2c88308dc9a6428f4ccf47cf0c3c33e4613d80d3fe2d67b6"
+    },
+    {
+      "path": "documents/Galaxias_Originate_Documentation.pdf",
+      "url": "https://galaxias-media.dtpgames.com/documents/Galaxias_Originate_Documentation.pdf",
+      "bytes": 2443658,
+      "sha256": "8f732792f731ebbe7ad3ef52fafc3bab95f4e5387268642aa487b9cac0048ae2"
+    },
+    {
+      "path": "index.html",
+      "url": "https://galaxias-media.dtpgames.com/",
+      "bytes": 28494,
+      "sha256": "311cc550c47cd9664e72362fc97b196effa2fedce6f26f73b670b70466a2d97c"
+    },
+    {
+      "path": "media/audio/10c.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/10c.mp3",
+      "bytes": 3402300,
+      "sha256": "b9d9f0a075d719c7f60559499eda51d81224433243441e6aa364894771908277"
+    },
+    {
+      "path": "media/audio/chalk-1.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/chalk-1.mp3",
+      "bytes": 5842622,
+      "sha256": "de3c2116ba3b25b83912b86b0a2a0fabcde5d1733b12b48964b07265f69f6979"
+    },
+    {
+      "path": "media/audio/flood.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/flood.mp3",
+      "bytes": 3882302,
+      "sha256": "0ff4e17fec31647ec5207295a79074a97c53276bfd5105f14dde35db6242b418"
+    },
+    {
+      "path": "media/audio/frog.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/frog.mp3",
+      "bytes": 2482621,
+      "sha256": "52b62ff9c2676d45b4ed35472767315321334567dc1c0d867ee7494e362834a8"
+    },
+    {
+      "path": "media/audio/hadal.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/hadal.mp3",
+      "bytes": 5004542,
+      "sha256": "88052ebb34b1816ba649c0691c3a549e5f63538511c767a6231524a38789ca68"
+    },
+    {
+      "path": "media/audio/live-dub-tech-jam.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/live-dub-tech-jam.mp3",
+      "bytes": 9642314,
+      "sha256": "e48e9ac8748b04859888692b0a0c3726bad200e32af00cfcf531120a7b180def"
+    },
+    {
+      "path": "media/audio/piano-drone.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/piano-drone.mp3",
+      "bytes": 2362628,
+      "sha256": "31b508e1b12030f1b8d10458c58e6ce59e2e197d838d1525b2e43bc1355fa67e"
+    },
+    {
+      "path": "media/audio/rain.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/rain.mp3",
+      "bytes": 3762301,
+      "sha256": "06a88fc5c2269203b75744f43760c35473ff10cc30765fb769facd2042dc9d70"
+    },
+    {
+      "path": "media/audio/sleep.mp3",
+      "url": "https://galaxias-media.dtpgames.com/media/audio/sleep.mp3",
+      "bytes": 3162302,
+      "sha256": "91e4dac86123086b339105f02f3aeb920331cd730ff9e97845a68369c76ef57e"
+    },
+    {
+      "path": "media/galaxias-development-reel.png",
+      "url": "https://galaxias-media.dtpgames.com/media/galaxias-development-reel.png",
+      "bytes": 2209288,
+      "sha256": "2ba86fec048951af91990a4abd65d01b416d027de3221800eefad1355e028562"
+    }
+  ]
+}
